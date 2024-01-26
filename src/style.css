@@ -1,43 +1,50 @@
-body{
+/* Estilos generales del cuerpo (body) */
+body {
     background-color: whitesmoke;
     display: flex;
     justify-content: center;
     margin-top: 1.5%;
-
 }
 
-.container{
+/* Estilos del contenedor principal */
+.container {
     border-radius: 5px;
     background: #F3B4B4;
     height: 41vw;
     width: 60vw;
 }
 
-.titulo{
+/* Estilos del título principal */
+.titulo {
     display: flex;
     justify-content: center;
 }
-.logo{
+
+/* Estilos del logo para pantallas de escritorio */
+.logo {
     height: 2.5%;
     width: 2.5%;
     margin-top: 2%;
     margin-left: 0.9%;
 }
+
+/* Estilos del logo responsive (oculto por defecto) */
 .logo-responsive {
     display: none;
 }
 
+/* Estilos del título responsive (oculto por defecto) */
 .titulo-responsive {
     display: none; 
 }
 
-/* secciones formulario */
-.distribucion_formulario{
+/* Estilos de las secciones del formulario */
+.distribucion_formulario {
     display: flex;
 }
 
-
-button{
+/* Estilos del botón en general */
+button {
     border-radius: 5%;
     width: 11%;
     height: 23%;
@@ -46,14 +53,15 @@ button{
     color: white;
     font-size: 18px;
     margin-left: 7%;
-  
 }
-label{
+
+/* Estilos de las etiquetas de los inputs */
+label {
     font-weight: bold;
 }
 
-
-input{
+/* Estilos de los inputs en el formulario */
+input {
     height: 2.5vw;
     width: 20vw;
     border-radius: 3px;
@@ -61,16 +69,18 @@ input{
     margin-top: 5%;
 }
 
-.nombre,.edad, .email, .telefono{
+/* Estilos de las secciones de nombre y edad, email y teléfono */
+.nombre, .edad, .email, .telefono {
     padding: 6%;
     margin-left: 12%;
 }
 
-.email_telefono{
+.email_telefono {
     margin-left: 8%;
 }
 
-.distribucion_usuarios{
+/* Estilos del contenedor de usuarios */
+.distribucion_usuarios {
     height: 15vw;
     width: 51vw;
     background-color: white;
@@ -80,88 +90,109 @@ input{
     margin-top: 1%;
 }
 
-.boton-enviar{
+/* Estilos del botón de enviar */
+.boton-enviar {
     height: 5%;
     margin-top: 1%;
     margin-left: 43%;
 }
 
-
-
+/* Media query para pantallas pequeñas */
 @media only screen and (min-width: 320px) and (max-width: 1000px) {
+    /* Ajustes en el contenedor principal para pantallas pequeñas */
     .container {
         margin-top: 10%;
         height: 180vw;
         width: 90vw;
     }
+
+    /* Ajustes en la distribución del formulario para pantallas pequeñas */
     .distribucion_formulario {
         display: flex;
         flex-direction: column;
     }
-    label{
+
+    /* Oculta las etiquetas de los inputs en pantallas pequeñas */
+    label {
         margin-top: -3%;
         display: none;
     }
+
+    /* Ajustes en el tamaño de los inputs para pantallas pequeñas */
     input {
         height: 10vw;
         width: 90%;
         margin-right: 40%;
     }
+
+    /* Alineación de los inputs a la izquierda en pantallas pequeñas */
     .distribucion_formulario input {
-        text-align: left; /*la alineación a la izquierda */
+        text-align: left;
     }
+
+    /* Oculta el título principal en pantallas pequeñas */
     h1 {
         display: none;
     }
-    .icono {
-        margin-top: 30%;
-    }
 
-    .nombre_email{
+    /* Ajustes en el contenedor de nombre y edad, email y teléfono para pantallas pequeñas */
+    .nombre_email {
         margin-left: -10%;
     }
-    .email_telefono{
-    margin-left: -10% ;
-    margin-top: -20%;
-    margin-top: -3%;}
 
-    .edad, .email, .telefono, .nombre{
+    .email_telefono {
+        margin-left: -10%;
+        margin-top: -20%;
+        margin-top: -3%;
+    }
+
+    /* Ajustes en la posición de edad, email, teléfono y nombre para pantallas pequeñas */
+    .edad, .email, .telefono, .nombre {
         margin-top: -6%;
     }
-    .distribucion_usuarios{
-          height: 55vw;
-          width: 77vw;
-          margin-top: 7%;
 
+    /* Ajustes en el contenedor de usuarios para pantallas pequeñas */
+    .distribucion_usuarios {
+        height: 55vw;
+        width: 77vw;
+        margin-top: 7%;
     }
-    button{
-        width: 22%;  }
-    
-    .boton-añadir{
+
+    /* Ajustes en el tamaño del botón para pantallas pequeñas */
+    button {
+        width: 22%;
+    }
+
+    /* Ajustes en la posición del botón añadir para pantallas pequeñas */
+    .boton-añadir {
         margin-left: 9%;
     }
-    
-    .boton-enviar{
-         margin-top: 5%;
-         margin-left: 40%;
-    }
-    .titulo-responsive {
-        display: block; /* Muestra un nuevo estilo de título en pantallas pequeñas */
-        font-size: 1.5em; /* Ajusta el tamaño del texto para pantallas más pequeñas */
-        text-align: center; 
-        color: #FFFFFF; 
-    }
-    
-    .logo {
-        display: none; /* Oculta el logo en pantallas más pequeñas */
+
+    /* Ajustes en la posición del botón enviar para pantallas pequeñas */
+    .boton-enviar {
+        margin-top: 5%;
+        margin-left: 40%;
     }
 
+    /* Muestra un nuevo estilo de título en pantallas pequeñas */
+    .titulo-responsive {
+        display: block;
+        font-size: 1.5em;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    /* Estilos del logo en pantallas pequeñas (oculto por defecto en escritorio) */
+    .logo {
+        display: none;
+    }
+
+    /* Estilos del logo responsive en pantallas pequeñas (visible por defecto) */
     .logo-responsive {
-        display: block; /* Muestra el logo responsive solo en pantallas más pequeñas */
+        display: block;
         height: 7%;
         width: 7%;
         margin-top: 5.4%;
         margin-left: 3.5%;
     }
-   
 }
