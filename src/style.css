@@ -1,5 +1,5 @@
 body{
-    background-color: black;
+    background-color: whitesmoke;
     display: flex;
     justify-content: center;
     margin-top: 1.5%;
@@ -16,6 +16,19 @@ body{
 .titulo{
     display: flex;
     justify-content: center;
+}
+.logo{
+    height: 2.5%;
+    width: 2.5%;
+    margin-top: 2%;
+    margin-left: 0.9%;
+}
+.logo-responsive {
+    display: none;
+}
+
+.titulo-responsive {
+    display: none; 
 }
 
 /* secciones formulario */
@@ -39,10 +52,11 @@ label{
     font-weight: bold;
 }
 
+
 input{
     height: 2.5vw;
     width: 20vw;
-    border-radius: 3%;
+    border-radius: 3px;
     border-style: none;
     margin-top: 5%;
 }
@@ -56,3 +70,98 @@ input{
     margin-left: 8%;
 }
 
+.distribucion_usuarios{
+    height: 15vw;
+    width: 51vw;
+    background-color: white;
+    border-radius: 5px;
+    justify-content: center;
+    margin-left: 7%;
+    margin-top: 1%;
+}
+
+.boton-enviar{
+    height: 5%;
+    margin-top: 1%;
+    margin-left: 43%;
+}
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 1000px) {
+    .container {
+        margin-top: 10%;
+        height: 180vw;
+        width: 90vw;
+    }
+    .distribucion_formulario {
+        display: flex;
+        flex-direction: column;
+    }
+    label{
+        margin-top: -3%;
+        display: none;
+    }
+    input {
+        height: 10vw;
+        width: 90%;
+        margin-right: 40%;
+    }
+    .distribucion_formulario input {
+        text-align: left; /*la alineación a la izquierda */
+    }
+    h1 {
+        display: none;
+    }
+    .icono {
+        margin-top: 30%;
+    }
+
+    .nombre_email{
+        margin-left: -10%;
+    }
+    .email_telefono{
+    margin-left: -10% ;
+    margin-top: -20%;
+    margin-top: -3%;}
+
+    .edad, .email, .telefono, .nombre{
+        margin-top: -6%;
+    }
+    .distribucion_usuarios{
+          height: 55vw;
+          width: 77vw;
+          margin-top: 7%;
+
+    }
+    button{
+        width: 22%;  }
+    
+    .boton-añadir{
+        margin-left: 9%;
+    }
+    
+    .boton-enviar{
+         margin-top: 5%;
+         margin-left: 40%;
+    }
+    .titulo-responsive {
+        display: block; /* Muestra un nuevo estilo de título en pantallas pequeñas */
+        font-size: 1.5em; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+        text-align: center; 
+        color: #FFFFFF; 
+    }
+    
+    .logo {
+        display: none; /* Oculta el logo en pantallas más pequeñas */
+    }
+
+    .logo-responsive {
+        display: block; /* Muestra el logo responsive solo en pantallas más pequeñas */
+        height: 7%;
+        width: 7%;
+        margin-top: 5.4%;
+        margin-left: 3.5%;
+    }
+   
+}
