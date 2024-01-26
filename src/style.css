@@ -1,3 +1,50 @@
 body{
-    background-color: blue;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5%;
+
 }
+
+.container{
+    border-radius: 5px;
+    background: #F3B4B4;
+    height: 41vw;
+    width: 60vw;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+}
+
+/* secciones formulario */
+.distribucion_formulario{
+    display: flex;
+}
+
+
+
+
+
+
+
+button{
+    border-radius: 5%;
+    width: 10%;
+    height: 20%;
+    border-radius: 5px;
+    background: #F65353;
+    color: white;
+    font-size: 18px;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+input{
+    height: 2.5vw;
+    width: 20vw;
+    border-radius: 3%;
+    border-style: none;
+}
+
+
