@@ -24,11 +24,6 @@ body{
 }
 
 
-
-
-
-
-
 button{
     border-radius: 5%;
     width: 10%;
@@ -37,8 +32,8 @@ button{
     background: #F65353;
     color: white;
     font-size: 18px;
-    margin-left: 5%;
-    margin-top: 5%;
+    margin-left: 7%;
+  
 }
 input{
     height: 2.5vw;
@@ -47,4 +42,12 @@ input{
     border-style: none;
 }
 
+.nombre,.edad, .email, .telefono{
+    padding: 6%;
+    margin-left: 12%;
+}
+
+.email_telefono{
+    margin-left: 8%;
+}
 
