@@ -81,7 +81,7 @@ input {
 
 /* Estilos del contenedor de usuarios */
 .distribucion_usuarios {
-    height: 15vw;
+    height: 12vw;
     width: 51vw;
     background-color: white;
     border-radius: 5px;
@@ -95,6 +95,28 @@ input {
     height: 5%;
     margin-top: 1%;
     margin-left: 43%;
+}
+
+.distribucion_usuarios{
+    color: #F65353;
+    display: flex;
+    padding: 2%;
+}
+
+#papelera{
+    height: 70%;
+    width: 70%;
+}
+
+#boton-eliminar{
+    margin-top: 17%;
+    background-color: white;
+    border-style: none;
+}
+
+#div{
+    display: flex;
+    flex-direction: column;
 }
 
 /* Media query para pantallas pequeñas */

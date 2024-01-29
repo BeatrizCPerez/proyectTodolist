@@ -1,25 +1,18 @@
 {
   "usuarios": [
     {
-      "nombre": "Carlota",
-      "edad": 36,
-      "email": "Carlota@gmail.com",
-      "teléfono": "677847364",
-      "id": "ccc0"
+      "id": "1474",
+      "nombre": "raquel",
+      "edad": "29",
+      "email": "raquel@gmail.com",
+      "telefono": "68767343"
     },
     {
-      "id": "7ac8",
-      "nombre": "Marta",
-      "edad": "19",
+      "id": "733d",
+      "nombre": "marta",
+      "edad": "34",
       "email": "marta@gmail.com",
-      "telefono": "65736212"
-    },
-    {
-      "id": "36cf",
-      "nombre": "Marta",
-      "edad": "32",
-      "email": "marta@gmail.com",
-      "telefono": "676355723"
+      "telefono": "6836485554"
     }
   ]
 }

@@ -15,9 +15,13 @@ async function cargarUsuarios() {
 
         usuariosSection.innerHTML = "";
 
-        usuarios.slice(0, 3).forEach(usuario => {
-            const usuarioElemento = document.createElement('div');
-            usuarioElemento.innerHTML = `<p>${usuario.nombre}, ${usuario.edad} años, Email: ${usuario.email}, Teléfono: ${usuario.telefono}</p>`;
+        usuarios.slice(0, 2).forEach(usuario => {
+            const usuarioElemento = document.createElement('div id="div"');
+            usuarioElemento.innerHTML = `
+                <p>${usuario.nombre}, ${usuario.edad} años, Email: ${usuario.email}, Teléfono: ${usuario.telefono}</p>
+                <button type="button" id="boton-eliminar" onclick="eliminarUsuario('${usuario.id}')">
+                <img src="/public/papelera.png" id="papelera"></button>
+            `;
             usuariosSection.appendChild(usuarioElemento);
         });
     } catch (error) {
@@ -72,6 +76,22 @@ function limpiarFormulario() {
     document.querySelector('.edad input').value = '';
     document.querySelector('.email input').value = '';
     document.querySelector('.telefono input').value = '';
+}
+
+async function eliminarUsuario(id) {
+    const confirmacion = confirm('¿Seguro que desea eliminar este usuario?');
+
+    if (confirmacion) {
+        const response = await fetch(`http://localhost:3000/usuarios/${id}`, {
+            method: 'DELETE',
+        });
+
+        if (response.ok) {
+            cargarUsuarios();
+        } else {
+            console.error('Error al eliminar usuario.');
+        }
+    }
 }
 
 function validarFormatoCorreo(email) {
