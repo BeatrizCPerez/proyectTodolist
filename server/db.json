@@ -1,0 +1,25 @@
+{
+  "usuarios": [
+    {
+      "nombre": "Carlota",
+      "edad": 36,
+      "email": "Carlota@gmail.com",
+      "teléfono": "677847364",
+      "id": "ccc0"
+    },
+    {
+      "id": "7ac8",
+      "nombre": "Marta",
+      "edad": "19",
+      "email": "marta@gmail.com",
+      "telefono": "65736212"
+    },
+    {
+      "id": "36cf",
+      "nombre": "Marta",
+      "edad": "32",
+      "email": "marta@gmail.com",
+      "telefono": "676355723"
+    }
+  ]
+}
