@@ -1,39 +1,36 @@
 /* Estilos generales del cuerpo (body) */
 body {
-    background-color: #f5f5f5;
+    background-color: #f5f5f5; /* Color de fondo del cuerpo */
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centra el contenido horizontalmente */
     margin-top: 1.5%;
 }
 
 /* Estilos del contenedor principal */
 .container {
     border-radius: 5px;
-    background: rgba(0, 0, 0, 0.80);
+    background: rgba(0, 0, 0, 0.80); /* Fondo del contenedor principal */
     height: auto;
     width: 60vw;
-    background-image: url(../public/Vector\ 1.png);
-    background-size: 70%; /* Puedes ajustar el valor a tus necesidades */
+    background-image: url(../public/Vector\ 1.png); /* Imagen de fondo */
+    background-size: 70%; /* Tamaño de la imagen de fondo */
     background-position: left;
     background-repeat: no-repeat;
 }
 
-
-.titulo-principal{
-    color: #FFFFFF;
+/* Estilos del título principal */
+.titulo-principal {
+    color: #FFFFFF; /* Color del texto */
     margin-left: 10%;
     padding: 2%;
     margin-top: -0.5%;
     width: max-content;
 }
 
-/* Estilos del título principal */
 .titulo {
     display: flex;
     justify-content: center;
 }
-
-
 
 .imagen-superpuesta {
     position: absolute;
@@ -44,31 +41,31 @@ body {
     margin-top: -3%;
 }
 
-
-
 /* Estilos del título responsive (oculto por defecto) */
 .titulo-responsive {
-    display: none; 
+    display: none;
 }
 
 /* Estilos de las secciones del formulario */
 .distribucion_formulario {
     display: flex;
     flex-direction: column;
-
     margin-left: -5%;
 }
 
 /* Estilos del botón en general */
-.boton-enviar, .boton-añadir {
+.boton-enviar,
+.boton-añadir {
     width: 16%;
     height: 25%;
     border-radius: 5px;
-    background: #341BC8;
-    color: white;
+    background: #341BC8; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
     font-size: 18px;
     margin-left: 9%;
 }
+
+/* Estilos de cada elemento de usuario en la lista */
 .usuario-item {
     display: flex;
     justify-content: space-between;
@@ -82,14 +79,12 @@ body {
     line-height: 1.5;
 }
 
-.boton-añadir{
-   
-        margin-left: 5%;
-        margin-top: 1%; /* Ajusta según sea necesario */
-    
+.boton-añadir {
+    margin-left: 5%;
+    margin-top: 1%; /* Ajusta según sea necesario */
 }
 
-
+/* Estilos para la información del usuario */
 .usuario-info {
     flex-grow: 1; /* Que ocupe todo el espacio disponible */
 }
@@ -107,19 +102,15 @@ body {
     margin-top: 16%;
 }
 
-
-
-.papelera{
-
+.papelera {
     height: 20px;
     background: none;
     border-style: none;
     height: 20px;
     width: 20px;
     bottom: none;
-
-
 }
+
 /* Estilos de las etiquetas de los inputs */
 label {
     font-weight: bold;
@@ -137,19 +128,21 @@ input {
     margin-top: 1%;
 }
 
-
-
-.mail, .male, .whatsapp{
+.mail,
+.male,
+.whatsapp {
     display: flex;
-    align-items:first baseline;
-height: 20px;
-width: 25px;
-margin-top: 2%;
+    align-items: first baseline;
+    height: 20px;
+    width: 25px;
+    margin-top: 2%;
 }
 
-
 /* Estilos de las secciones de nombre y edad, email y teléfono */
-.nombre, .edad, .email, .telefono {
+.nombre,
+.edad,
+.email,
+.telefono {
     padding: 2%;
     margin-left: 8%;
 }
@@ -158,14 +151,13 @@ margin-top: 2%;
 .boton-enviar {
     width: 15%;
     height: 5%;
-    
     margin-left: 68%;
 }
 
-
-.boton-añadir{
- margin-left: 5%;
+.boton-añadir {
+    margin-left: 5%;
 }
+
 /* Estilos del contenedor de usuarios */
 .distribucion_usuarios {
     overflow-y: auto;
@@ -183,12 +175,7 @@ margin-top: 2%;
     font-size: 18px;
     text-align: left;
     margin-left: 45px;
-    
 }
-
-
-
-/* ... (otros estilos) ... */
 
 /* Ajustes para la versión responsive */
 @media only screen and (max-width: 1000px) {
@@ -197,7 +184,7 @@ margin-top: 2%;
         height: 100%;
         background-image: none;
         border-radius: 10px;
-background: rgba(0, 0, 0, 0.90);
+        background: rgba(0, 0, 0, 0.90);
     }
 
     .vector {
@@ -205,43 +192,43 @@ background: rgba(0, 0, 0, 0.90);
         width: auto;
     }
 
-    input{
+    input {
         width: 70vw;
         height: 7vw;
         margin-top: 2%;
     }
 
     .imagen-superpuesta {
-        margin-top: -99%;
+        margin-top: -97%;
         margin-left: 80%;
         width: 8%;
         height: 5%;
     }
 
-    .logo{
+    .logo {
         display: none;
     }
 
     .boton-enviar,
     .boton-añadir {
         width: 80%;
-        }
+    }
 
-    .boton-añadir{
+    .boton-añadir {
         margin-top: 8%;
     }
 
-    .boton-enviar{
+    .boton-enviar {
         margin-top: 3%;
         margin-left: 10%;
     }
     .mensaje-error {
         font-size: 14px;
         margin-left: 5%;
-        padding: 3%;
+        margin-top: 3%;
     }
 
-    form{
+    form {
         margin-top: -15%;
         margin-left: 7%;
     }
@@ -262,11 +249,11 @@ background: rgba(0, 0, 0, 0.90);
         color: #FFFFFF;
         font-size: 26px;
     }
-    
+
     .logo-responsive {
         display: none;
     }
-    
+
     .titulo-principal {
         display: none;
     }

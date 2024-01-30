@@ -1,25 +1,32 @@
+// Espera a que el DOM esté completamente cargado antes de ejecutar código
 document.addEventListener('DOMContentLoaded', () => {
+    // Agrega un evento al formulario para prevenir su envío por defecto y llamar a la función anadirUsuario
     document.getElementById('miFormulario').addEventListener('submit', (event) => {
         event.preventDefault();
         anadirUsuario();
     });
 
+    // Carga la lista de usuarios al cargar la página
     cargarUsuarios();
 });
 
+// Función asincrónica para cargar usuarios desde la API
 async function cargarUsuarios() {
     try {
+        // Realiza una solicitud GET a la API para obtener la lista de usuarios
         const response = await fetch('http://localhost:3000/usuarios');
         const usuarios = await response.json();
         const usuariosSection = document.getElementById('usuariosSection');
 
+        // Limpia el contenido actual del contenedor de usuarios
         usuariosSection.innerHTML = "";
 
+        // Crea elementos HTML para cada usuario y los agrega al contenedor
         usuarios.slice(0, 5).forEach(usuario => {
             const usuarioElemento = document.createElement('div');
-            usuarioElemento.classList.add('usuario-item'); // Agrega una clase para personalizar los estilos
+            usuarioElemento.classList.add('usuario-item');
             usuarioElemento.innerHTML = `
-                <p> <img src="/public/male.png" class="male">Nombre: ${usuario.nombre},     ${usuario.edad} años, <img src="/public/mail.png" class="mail"> Email: ${usuario.email},<img src="/public/whatsapp.png" class="whatsapp"> Teléfono: ${usuario.telefono}</p>
+                <p> <img src="/public/male.png" class="male">Nombre: ${usuario.nombre}, ${usuario.edad} años, <img src="/public/mail.png" class="mail"> Email: ${usuario.email},<img src="/public/whatsapp.png" class="whatsapp"> Teléfono: ${usuario.telefono}</p>
                 <button type="button" class="boton-eliminar" onclick="eliminarUsuario('${usuario.id}')">
                     <img src="/public/papelera.png" class="papelera">
                 </button>
@@ -34,16 +41,15 @@ async function cargarUsuarios() {
     }
 }
 
-// Resto del código sin cambios...
-
-
-
+// Función para añadir un nuevo usuario
 async function anadirUsuario() {
+    // Obtiene valores del formulario
     const nuevoNombre = document.querySelector('.nombre input').value;
     const nuevaEdad = document.querySelector('.edad input').value;
     const nuevoEmail = document.querySelector('.email input').value;
     const nuevoTelefono = document.querySelector('.telefono input').value;
 
+    // Validaciones de los campos
     if (!/^[a-zA-Z]+$/.test(nuevoNombre)) {
         mostrarMensajeError('Por favor, ingrese un nombre válido (solo letras).');
         return;
@@ -59,6 +65,7 @@ async function anadirUsuario() {
         return;
     }
 
+    // Envía una solicitud POST a la API para añadir un nuevo usuario
     const response = await fetch('http://localhost:3000/usuarios', {
         method: 'POST',
         headers: {
@@ -72,6 +79,7 @@ async function anadirUsuario() {
         }),
     });
 
+    // Si la solicitud es exitosa, recarga la lista de usuarios y limpia el formulario
     if (response.ok) {
         cargarUsuarios();
         limpiarFormulario();
@@ -80,6 +88,7 @@ async function anadirUsuario() {
     }
 }
 
+// Limpia los campos del formulario
 function limpiarFormulario() {
     document.querySelector('.nombre input').value = '';
     document.querySelector('.edad input').value = '';
@@ -87,31 +96,30 @@ function limpiarFormulario() {
     document.querySelector('.telefono input').value = '';
 }
 
+// Función para editar la información de un usuario
 async function editarUsuario(id) {
-    // Se solicita al usuario ingresar la nueva información para el usuario.
+    // Solicita al usuario ingresar la nueva información
     const nuevoNombre = prompt('Ingrese el nuevo nombre:');
     const nuevaEdad = prompt('Ingrese la nueva edad:');
     const nuevoEmail = prompt('Ingrese el nuevo correo electrónico:');
 
-    // Validar que el nombre solo contenga letras
+    // Validaciones de los campos
     if (!/^[a-zA-Z]+$/.test(nuevoNombre)) {
         mostrarMensajeError('Por favor, ingrese un nombre válido (solo letras).');
         return;
     }
 
-    // Validar que la edad sea un número
     if (isNaN(nuevaEdad)) {
         mostrarMensajeError('Por favor, ingrese una edad válida (número).');
         return;
     }
 
-    // Validar el formato del correo electrónico
     if (!validarFormatoCorreo(nuevoEmail)) {
         mostrarMensajeError('Por favor, ingrese un correo electrónico válido.');
         return;
     }
 
-    // Se realiza una solicitud PUT a la API para actualizar la información del usuario.
+    // Envía una solicitud PUT a la API para actualizar la información del usuario
     const response = await fetch(`http://localhost:3000/usuarios/${id}`, {
         method: 'PUT',
         headers: {
@@ -124,29 +132,26 @@ async function editarUsuario(id) {
         }),
     });
 
-    // Si la solicitud es exitosa, se recargan los datos para reflejar el cambio en la tabla.
+    // Si la solicitud es exitosa, recarga la lista de usuarios
     if (response.ok) {
         cargarDatos();
     } else {
-        // En caso de error, se muestra un mensaje en la consola.
         console.error('Error al editar usuario.');
     }
 }
 
-
-
-
-
-
-
+// Función para eliminar un usuario
 async function eliminarUsuario(id) {
+    // Pregunta al usuario si está seguro de eliminar
     const confirmacion = confirm('¿Seguro que desea eliminar este usuario?');
 
     if (confirmacion) {
+        // Envía una solicitud DELETE a la API para eliminar el usuario
         const response = await fetch(`http://localhost:3000/usuarios/${id}`, {
             method: 'DELETE',
         });
 
+        // Si la solicitud es exitosa, recarga la lista de usuarios
         if (response.ok) {
             cargarUsuarios();
         } else {
@@ -155,19 +160,18 @@ async function eliminarUsuario(id) {
     }
 }
 
+// Validación del formato del correo electrónico
 function validarFormatoCorreo(email) {
     const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regexCorreo.test(email);
 }
 
+// Muestra un mensaje de error y lo limpia después de un tiempo
 function mostrarMensajeError(mensaje) {
     const mensajeError = document.getElementById('mensajeError');
     mensajeError.textContent = mensaje;
 
     setTimeout(() => {
-        mensajeError.textContent = ''; // Limpiar el mensaje después de un tiempo
+        mensajeError.textContent = '';
     }, 5000);
 }
-
-
-
