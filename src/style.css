@@ -9,9 +9,22 @@ body {
 /* Estilos del contenedor principal */
 .container {
     border-radius: 5px;
-    background: #F3B4B4;
+    background: rgba(0, 0, 0, 0.80);
     height: 41vw;
     width: 60vw;
+    background-image: url(../public/Vector\ 1.png);
+    background-size: 70%; /* Puedes ajustar el valor a tus necesidades */
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+
+.titulo-principal{
+    color: #FFFFFF;
+    margin-left: 10%;
+    padding: 2%;
+    margin-top: -0.5%;
+    width: max-content;
 }
 
 /* Estilos del título principal */
@@ -20,18 +33,18 @@ body {
     justify-content: center;
 }
 
-/* Estilos del logo para pantallas de escritorio */
-.logo {
-    height: 2.5%;
-    width: 2.5%;
-    margin-top: 2%;
-    margin-left: 0.9%;
+
+
+.imagen-superpuesta {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    z-index: 1;
+    margin-left: 25%;
+    margin-top: -3%;
 }
 
-/* Estilos del logo responsive (oculto por defecto) */
-.logo-responsive {
-    display: none;
-}
+
 
 /* Estilos del título responsive (oculto por defecto) */
 .titulo-responsive {
@@ -41,23 +54,69 @@ body {
 /* Estilos de las secciones del formulario */
 .distribucion_formulario {
     display: flex;
+    flex-direction: column;
+
+    margin-left: -5%;
 }
 
 /* Estilos del botón en general */
-button {
-    border-radius: 5%;
-    width: 11%;
-    height: 23%;
+.boton-enviar, .boton-añadir {
+    width: 16%;
+    height: 25%;
     border-radius: 5px;
-    background: #F65353;
+    background: #341BC8;
     color: white;
     font-size: 18px;
-    margin-left: 7%;
+    margin-left: 9%;
+}
+.usuario-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    background: linear-gradient(180deg, #9A9A9A 0%, rgba(255, 255, 255, 0.00) 100%);
+    border-radius: 5%;
+    color: white;
+    font-weight: bold;
+    line-height: 1.5;
 }
 
+
+.usuario-info {
+    flex-grow: 1; /* Que ocupe todo el espacio disponible */
+}
+
+.boton-eliminar,
+.boton-editar {
+    margin-left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background: linear-gradient(180deg, #9A9A9A 0%, rgba(255, 255, 255, 0.00) 100%);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    height: 20px;
+    margin-top: 16%;
+}
+
+
+
+.papelera{
+
+    height: 20px;
+    background: none;
+    border-style: none;
+    height: 20px;
+    width: 20px;
+    bottom: none;
+
+
+}
 /* Estilos de las etiquetas de los inputs */
 label {
     font-weight: bold;
+    color: white;
 }
 
 /* Estilos de los inputs en el formulario */
@@ -66,155 +125,128 @@ input {
     width: 20vw;
     border-radius: 3px;
     border-style: none;
-    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1%;
 }
 
 /* Estilos de las secciones de nombre y edad, email y teléfono */
 .nombre, .edad, .email, .telefono {
-    padding: 6%;
-    margin-left: 12%;
-}
-
-.email_telefono {
+    padding: 2%;
     margin-left: 8%;
-}
-
-/* Estilos del contenedor de usuarios */
-.distribucion_usuarios {
-    height: 12vw;
-    width: 51vw;
-    background-color: white;
-    border-radius: 5px;
-    justify-content: center;
-    margin-left: 7%;
-    margin-top: 1%;
 }
 
 /* Estilos del botón de enviar */
 .boton-enviar {
+    width: 15%;
     height: 5%;
-    margin-top: 1%;
-    margin-left: 43%;
+    
+    margin-left: 68%;
 }
 
-.distribucion_usuarios{
-    color: #F65353;
-    display: flex;
-    padding: 2%;
+
+.boton-añadir{
+ margin-left: 5%;
+}
+/* Estilos del contenedor de usuarios */
+.distribucion_usuarios {
+    height: 30vw;
+    width: 25vw;
+    border-radius: 5px;
+    justify-content: center;
+    margin-left: 55%;
+    margin-top: -48%;
+    border-radius: 30px;
+    background: linear-gradient(180deg, #9A9A9A 0%, rgba(255, 255, 255, 0.00) 100%);
 }
 
-#papelera{
-    height: 70%;
-    width: 70%;
+.mensaje-error {
+    color: red;
+    font-size: 18px;
+    text-align: left;
+    margin-left: 45px;
+    
 }
 
-#boton-eliminar{
-    margin-top: 17%;
-    background-color: white;
-    border-style: none;
-}
 
-#div{
-    display: flex;
-    flex-direction: column;
-}
 
-/* Media query para pantallas pequeñas */
-@media only screen and (min-width: 320px) and (max-width: 1000px) {
-    /* Ajustes en el contenedor principal para pantallas pequeñas */
+/* ... (otros estilos) ... */
+
+/* Ajustes para la versión responsive */
+@media only screen and (max-width: 1000px) {
     .container {
-        margin-top: 10%;
-        height: 180vw;
-        width: 90vw;
+        width: 100%;
+        height: 100%;
+        background-image: none;
     }
 
-    /* Ajustes en la distribución del formulario para pantallas pequeñas */
-    .distribucion_formulario {
-        display: flex;
-        flex-direction: column;
+    .vector {
+        height: auto;
+        width: auto;
     }
 
-    /* Oculta las etiquetas de los inputs en pantallas pequeñas */
-    label {
-        margin-top: -3%;
+    input{
+        width: 70vw;
+        height: 7vw;
+        margin-top: 2%;
+    }
+
+    .imagen-superpuesta {
+        margin-top: -97%;
+        margin-left: 80%;
+        width: 8%;
+        height: 5%;
+    }
+
+    .logo{
         display: none;
     }
 
-    /* Ajustes en el tamaño de los inputs para pantallas pequeñas */
-    input {
-        height: 10vw;
-        width: 90%;
-        margin-right: 40%;
-    }
-
-    /* Alineación de los inputs a la izquierda en pantallas pequeñas */
-    .distribucion_formulario input {
-        text-align: left;
-    }
-
-    /* Oculta el título principal en pantallas pequeñas */
-    h1 {
-        display: none;
-    }
-
-    /* Ajustes en el contenedor de nombre y edad, email y teléfono para pantallas pequeñas */
-    .nombre_email {
-        margin-left: -10%;
-    }
-
-    .email_telefono {
-        margin-left: -10%;
-        margin-top: -20%;
-        margin-top: -3%;
-    }
-
-    /* Ajustes en la posición de edad, email, teléfono y nombre para pantallas pequeñas */
-    .edad, .email, .telefono, .nombre {
-        margin-top: -6%;
-    }
-
-    /* Ajustes en el contenedor de usuarios para pantallas pequeñas */
-    .distribucion_usuarios {
-        height: 55vw;
-        width: 77vw;
-        margin-top: 7%;
-    }
-
-    /* Ajustes en el tamaño del botón para pantallas pequeñas */
-    button {
-        width: 22%;
-    }
-
-    /* Ajustes en la posición del botón añadir para pantallas pequeñas */
+    .boton-enviar,
     .boton-añadir {
-        margin-left: 9%;
+        width: 80%;
+        }
+
+    .boton-añadir{
+        margin-top: 8%;
     }
 
-    /* Ajustes en la posición del botón enviar para pantallas pequeñas */
-    .boton-enviar {
-        margin-top: 5%;
-        margin-left: 40%;
+    .boton-enviar{
+        margin-top: 3%;
+        margin-left: 10%;
+    }
+    .mensaje-error {
+        font-size: 14px;
+        margin-left: 5%
     }
 
-    /* Muestra un nuevo estilo de título en pantallas pequeñas */
+    form{
+        margin-top: -15%;
+        margin-left: 7%;
+    }
+
+    .distribucion_usuarios {
+        height: auto;
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 12%;
+        border-radius: 15px;
+    }
+
     .titulo-responsive {
-        display: block;
-        font-size: 1.5em;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin-top: -3%;
+        padding: 8%;
         color: #FFFFFF;
+        font-size: 26px;
     }
-
-    /* Estilos del logo en pantallas pequeñas (oculto por defecto en escritorio) */
-    .logo {
+    
+    .logo-responsive {
         display: none;
     }
-
-    /* Estilos del logo responsive en pantallas pequeñas (visible por defecto) */
-    .logo-responsive {
-        display: block;
-        height: 7%;
-        width: 7%;
-        margin-top: 5.4%;
-        margin-left: 3.5%;
+    
+    .titulo-principal {
+        display: none;
     }
 }
