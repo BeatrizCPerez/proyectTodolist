@@ -8,18 +8,10 @@
       "telefono": "67654244"
     },
     {
-      "id": "4e4d",
-      "nombre": "lina",
-      "edad": "22",
-      "email": "lina@gmail.com",
-      "telefono": "674567433"
-    },
-    {
-      "id": "454e",
       "nombre": "miguel",
       "edad": "22",
       "email": "miguel@gmail.com",
-      "telefono": "6737789055"
+      "id": "4e4d"
     }
   ]
 }
