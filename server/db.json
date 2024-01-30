@@ -1,17 +1,11 @@
 {
   "usuarios": [
     {
-      "nombre": "Tamara",
-      "edad": "39",
-      "email": "Tamara@gmail.com",
-      "id": "b58d"
-    },
-    {
-      "id": "f2da",
-      "nombre": "Miguel",
-      "edad": "32",
-      "email": "Miguel@gmail.com",
-      "telefono": "67365423"
+      "id": "d60a",
+      "nombre": "miguel",
+      "edad": "45",
+      "email": "cuentaclaseF5@gmail.com",
+      "telefono": "6432345678"
     }
   ]
 }

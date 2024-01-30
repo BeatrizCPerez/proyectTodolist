@@ -13,5 +13,6 @@
     "json-server": "^1.0.0-alpha.22",
     "nodemailer": "^6.9.8"
   },
+  "devDependencies": {},
   "description": ""
 }
