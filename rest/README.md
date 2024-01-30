@@ -1,26 +1,12 @@
- <h1 style="color: black; text-align: center;">PROYECTO TO DO LIST</h1>
-<img src="../public/logoGitHub.png">
-<style>
-  body {
-    background-color: #ffffff; 
-  }
-</style>
-  <style>
-    p{
-    color:black;
-    font-size:
-    }
-    </style>
+  <h1>PROYECTO TO DO LIST</h1>
+ <img src="../public/logogithub.png">
+
   <p>Bienvenidos a nuestro  formulario  de github en el que podras añadir,editar, borrar personas a tus  proyectos.</p>
   
   <h2>CONTENIDO DEL PROYECTO<H2>
   <p> Este proyecto es una interfaz de programación de aplicaciones (API) diseñada para llevar a cabo operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en recursos específicos a través de solicitudes HTTP. Ya sea que estés construyendo una aplicación web, móvil o cualquier otra cosa, esta API proporciona las herramientas necesarias para interactuar con tus datos de manera eficiente.</p>
 
-  <style>
-   h2{
-    color:black
-   }
-  </style>
+  
 <h2>CARACTERISTICAS DEL PROYECTO</h2>
 
 * <p>Hacer get que visualiza lo añadido </p>
