@@ -25,4 +25,4 @@ Event Listeners: Agrega event listeners al formulario para manejar eventos como 
 Envío de la Solicitud: fetch para enviar la solicitud a la API. Maneja la respuesta de la API, ya sea procesando los datos o manejando errores.</p>
 
 
-<img src="../public/logoGitHub.png">
+<img src="../public/logogithub.png">
