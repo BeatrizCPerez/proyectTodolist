@@ -15,11 +15,11 @@ async function cargarUsuarios() {
 
         usuariosSection.innerHTML = "";
 
-        usuarios.slice(0, 3).forEach(usuario => {
+        usuarios.slice(0, 5).forEach(usuario => {
             const usuarioElemento = document.createElement('div');
             usuarioElemento.classList.add('usuario-item'); // Agrega una clase para personalizar los estilos
             usuarioElemento.innerHTML = `
-                <p>Nombre: ${usuario.nombre},     ${usuario.edad} años, Email: ${usuario.email}, Teléfono: ${usuario.telefono}</p>
+                <p> <img src="/public/male.png" class="male">Nombre: ${usuario.nombre},     ${usuario.edad} años, <img src="/public/mail.png" class="mail"> Email: ${usuario.email},<img src="/public/whatsapp.png" class="whatsapp"> Teléfono: ${usuario.telefono}</p>
                 <button type="button" class="boton-eliminar" onclick="eliminarUsuario('${usuario.id}')">
                     <img src="/public/papelera.png" class="papelera">
                 </button>
