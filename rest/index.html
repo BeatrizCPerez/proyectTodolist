@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-B8JCA8p+6FLRbYk9DWXJrDtS+XUhxZ1+PtXa6qrdF0ktcX2gJtKeQzJlhx2yyv+giUpUptSL25pnOi3Z1j4aqQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../src/style.css">
@@ -9,11 +8,13 @@
 </head>
 <body>
     <section class="container">
+      
+            <h1 class="titulo-principal">AÑADIR CONTRIBUIDOR AL REPOSITORIO DE GITHUB</h1>
         <section class="titulo">
-            <h1>AÑADIR CONTRIBUIDOR AL REPOSITORIO DE GITHUB</h1><img src="../public/logoGitHub.png" class="logo">
-            <h1 class="titulo-responsive">Repositorio GitHub</h1><img src="../public/logoGitHub.png" class="logo-responsive">
+            <h1 class="titulo-responsive">Repositorio GitHub</h1>
         </section>
         <form id="miFormulario">
+            <div class="mensaje-error" id="mensajeError"></div>
             <div class="distribucion_formulario">
                 <div class="nombre_email">
                     <div class="nombre">
@@ -38,9 +39,15 @@
             </div>
             <button type="submit" class="boton-añadir">Añadir</button>
         </form>
-        <section class="distribucion_usuarios"></section>
+        <div class="vector-icono">
+            <img src="../public/Vector-icono.png" alt="Tu Imagen" class="imagen-superpuesta">
+        
+        </div>
+        <section class="distribucion_usuarios" id="usuariosSection">
+            </section>
         <button type="button" onclick="enviarUsuarios()" class="boton-enviar">Enviar</button>
     </section>
+</div>
     <script src="../src/js/main.js"></script>
 </body>
 </html>
