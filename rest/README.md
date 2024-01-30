@@ -17,7 +17,7 @@
 <h2>HEMOS UTILIZADO</h2>
 <p>HTML: Establece los atributos necesarios, como action y method en la etiqueta <form>.
 
-JavaScript:  para manejar eventos del formulario y realizar peticiones a la API. 
+JavaScript:  para manejar eventos del formulario  y realizar peticiones a la API. Nuestro formulario dispone de verificaciones. Al añadir caracteres que no corresponden con los datos solicitados el mismo, da error.
 
 Event Listeners: Agrega event listeners al formulario para manejar eventos como envío (submit).
 

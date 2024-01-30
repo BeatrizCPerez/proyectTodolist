@@ -175,3 +175,32 @@ function mostrarMensajeError(mensaje) {
         mensajeError.textContent = '';
     }, 5000);
 }
+
+function enviarUsuarios() {
+    // Puedes realizar acciones adicionales aquí si es necesario
+    alert('Formulario enviado');
+
+    // Limpia el formulario después de enviarlo
+    limpiarFormulario();
+
+    // Limpia la sección de usuarios después de enviar el formulario
+    limpiarUsuariosSection();
+}
+
+// Función para limpiar la sección de usuarios
+function limpiarUsuariosSection() {
+    const usuariosSection = document.getElementById('usuariosSection');
+    usuariosSection.innerHTML = "";
+}
+
+async function eliminarUsuarioEnDB(id) {
+    // Envía una solicitud DELETE a la API para eliminar el usuario
+    const response = await fetch(`http://localhost:3000/usuarios/${id}`, {
+        method: 'DELETE',
+    });
+
+    // Si la solicitud no es exitosa, imprime un mensaje de error en la consola
+    if (!response.ok) {
+        console.error('Error al eliminar usuario de la base de datos.');
+    }
+}
