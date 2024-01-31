@@ -1,7 +1,7 @@
   <h1>PROYECTO TO DO LIST</h1>
  <img src="./public/logogithub.png">
 
-  <p>Bienvenidos a nuestro  formulario  de github en el que podras añadir,editar, borrar personas a tus  proyectos.</p>
+  <p>Bienvenidos a nuestro  formulario  de github en el que podras añadir,editar,actualizar y borrar personas a tus  proyectos.</p>
   
   <h2>CONTENIDO DEL PROYECTO<H2>
   <p> Este proyecto es una interfaz de programación de aplicaciones (API) diseñada para llevar a cabo operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en recursos específicos a través de solicitudes HTTP. Ya sea que estés construyendo una aplicación web, móvil o cualquier otra cosa, esta API proporciona las herramientas necesarias para interactuar con tus datos de manera eficiente.</p>
@@ -27,6 +27,8 @@ Envío de la Solicitud: fetch para enviar la solicitud a la API. Maneja la respu
 Al hacer click en el boton añadir, se nos añadirá el usuario en el espacio derecho o en el responsive en la parte inferior(No hay limite de usuarios.) En la versión desktop al añadir mas de 2 usuarios se nos abre el scroll en el area de almacenamiento de usuario para una experiencia mas cómoda e intuitiva.
 
 El formulario tiene la opción de envio al correo electrónico. El mismo envia al correo de la empresa(el nuestro) la información rellenada en el formulario(no en el area de almacenamiento de usuario). Una vez rellenado el formulario, sin añadir, hacemos click en enviar, nos aparecerá la notificación de formulario rellenado correctamente y en el correo recibiremos la información que se ha rellenado en el formulario.
+
+Al realizar cualquier acción, el mismo se actualiza.
 
 Nuetro formulario esta disponible tanto en version desktop. 
 
