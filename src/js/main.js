@@ -3,6 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         anadirUsuario();
     });
+    document.getElementById('miFormulario').addEventListener('input', function(event) {
+        const input = event.target;
+
+        // Verifica si el input es válido y no está vacío
+        if (input.validity.valid && input.value.trim() !== '') {
+            input.nextElementSibling.style.opacity = 1; // Muestra el icono de tick
+        } else {
+            input.nextElementSibling.style.opacity = 0; // Oculta el icono si el input no es válido o está vacío
+        }
+    });
 
     // Cambia el tipo de botón de "submit" a "button" en el formulario HTML
     // y agrega un event listener al botón de añadir
@@ -110,32 +120,32 @@ function limpiarFormulario() {
 }
 
 function enviarFormulario() {
-    const nombre = document.getElementById('nombre').value;
-    const edad = document.getElementById('edad').value;
-    const email = document.getElementById('email').value;
-    const telefono = document.getElementById('telefono').value;
+    const nombre = document.getElementById('nombre');
+    const edad = document.getElementById('edad');
+    const email = document.getElementById('email');
+    const telefono = document.getElementById('telefono');
 
     // Validaciones de los campos
-    if (!/^[a-zA-Z]+$/.test(nombre)) {
+    if (!/^[a-zA-Z]+$/.test(nombre.value)) {
         mostrarMensajeError('Por favor, ingrese un nombre válido (solo letras).');
         return;
     }
 
-    if (isNaN(edad)) {
+    if (isNaN(edad.value)) {
         mostrarMensajeError('Por favor, ingrese una edad válida (número).');
         return;
     }
 
-    if (!validarFormatoCorreo(email)) {
+    if (!validarFormatoCorreo(email.value)) {
         mostrarMensajeError('Por favor, ingrese un correo electrónico válido.');
         return;
     }
 
     const formData = new FormData();
-    formData.append('Nombre', nombre);
-    formData.append('Edad', edad);
-    formData.append('E-mail', email);
-    formData.append('Teléfono', telefono);
+    formData.append('Nombre', nombre.value);
+    formData.append('Edad', edad.value);
+    formData.append('E-mail', email.value);
+    formData.append('Teléfono', telefono.value);
 
     const endpoint = 'https://formspree.io/f/mgegawke';
     fetch(endpoint, {
@@ -149,6 +159,7 @@ function enviarFormulario() {
         if (response.ok) {
             alert('Formulario enviado con éxito');
             limpiarFormulario();
+            ocultarTicks(); // Llamada a la función para ocultar los ticks
         } else {
             throw new Error('Error al enviar el formulario');
         }
@@ -158,12 +169,21 @@ function enviarFormulario() {
         alert('Hubo un error al enviar el formulario');
     });
 }
+
+// Nueva función para ocultar los ticks
+function ocultarTicks() {
+    const ticks = document.querySelectorAll('.icono-tick');
+    ticks.forEach(tick => {
+        tick.style.opacity = 0;
+    });
+}
 // Función para editar la información de un usuario
 async function editarUsuario(id) {
     // Solicita al usuario ingresar la nueva información
     const nuevoNombre = prompt('Ingrese el nuevo nombre:');
     const nuevaEdad = prompt('Ingrese la nueva edad:');
     const nuevoEmail = prompt('Ingrese el nuevo correo electrónico:');
+    const nuevoTelefono = prompt('Ingrese el nuevo número de teléfono:');
 
     // Validaciones de los campos
     if (!/^[a-zA-Z]+$/.test(nuevoNombre)) {
@@ -181,24 +201,37 @@ async function editarUsuario(id) {
         return;
     }
 
-    // Envía una solicitud PUT a la API para actualizar la información del usuario
-    const response = await fetch(`http://localhost:3000/usuarios/${id}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            nombre: nuevoNombre,
-            edad: nuevaEdad,
-            email: nuevoEmail,
-        }),
-    });
+    if (!/^6\d{8,9}$/.test(nuevoTelefono)) {
+        mostrarMensajeError('Por favor, ingrese un número de teléfono válido.');
+        return;
+    }
 
-    // Si la solicitud es exitosa, recarga la lista de usuarios
-    if (response.ok) {
-        cargarDatos();
-    } else {
-        console.error('Error al editar usuario.');
+    // Objeto con la información actualizada del usuario
+    const usuarioActualizado = {
+        nombre: nuevoNombre,
+        edad: nuevaEdad,
+        email: nuevoEmail,
+        telefono: nuevoTelefono,
+    };
+
+    try {
+        // Envía una solicitud PUT a la API para actualizar la información del usuario
+        const response = await fetch(`http://localhost:3000/usuarios/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(usuarioActualizado),
+        });
+
+        // Si la solicitud es exitosa, recarga la lista de usuarios
+        if (response.ok) {
+            cargarUsuarios();
+        } else {
+            console.error('Error al editar usuario:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error al editar usuario:', error.message);
     }
 }
 

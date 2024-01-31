@@ -18,22 +18,33 @@
             <div class="distribucion_formulario">
                 <div class="nombre_email">
                     <div class="nombre">
-                        <label for="">Nombre</label>
-                        <input type="text" id="nombre" placeholder="Nombre">
+                        <label for="nombre">Nombre</label>
+                        <div class="input-icon-container">
+                            <input type="text" id="nombre" placeholder="Nombre" pattern="^[a-zA-Z]+(?:\s[a-zA-Z]+)?$" required>
+                            <div class="icono-tick"></div>
+                        </div>
                     </div>
                     <div class="edad">
-                        <label for="">Edad</label>
-                        <input type="text" id="edad" placeholder="Edad">
+                        <label for="edad">Edad</label>
+                        <div class="input-icon-container">
+                            <input type="text" id="edad" placeholder="Edad" pattern="^[1-9][0-9]?$|^100$" required>
+                            <div class="icono-tick"></div>
+                        </div>
                     </div>
+                    
                 </div>
                 <div class="email_telefono">
                     <div class="email">
                         <label for="">E-mail</label>
-                        <input type="text" id="email" placeholder="E-mail">
+                        <input type="text" id="email" placeholder="E-mail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+                        <div class="icono-tick"></div> 
                     </div>
+                    
                     <div class="telefono">
-                        <label for="">Teléfono</label>
-                        <input type="text" id="telefono" placeholder="Teléfono">
+                        <label for="telefono">Teléfono</label>
+                       <input type="text" id="telefono" placeholder="Teléfono" pattern="^6\d{8,9}$" required>
+
+                        <div class="icono-tick"></div>
                     </div>
                 </div>
             </div>

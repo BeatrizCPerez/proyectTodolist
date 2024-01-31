@@ -11,6 +11,7 @@ body {
     border-radius: 5px;
     background: rgba(0, 0, 0, 0.80); /* Fondo del contenedor principal */
     height: auto;
+    min-height: 40vw;
     width: 60vw;
     background-image: url(../public/Vector\ 1.png); /* Imagen de fondo */
     background-size: 70%; /* Tamaño de la imagen de fondo */
@@ -27,6 +28,24 @@ body {
     width: max-content;
 }
 
+
+/* Estilo del icono de tick */
+.icono-tick {
+    background: url('../public/tick.png') no-repeat;
+    background-size: contain;
+    width: 20px; /* Ajusta según sea necesario */
+    height: 20px; /* Ajusta según sea necesario */
+    margin-left: 33%; /* Espacio entre el input y el icono */
+    margin-top: -3.5%;
+    opacity: 0; /* Por defecto, el icono no es visible */
+}
+
+/* Estilos del input cuando es válido */
+input:valid + .icono-tick {
+    opacity: 1; /* Muestra el icono cuando el input es válido */
+}
+
+
 .titulo {
     display: flex;
     justify-content: center;
@@ -38,7 +57,7 @@ body {
     height: 55px;
     z-index: 1;
     margin-left: 25%;
-    margin-top: -3%;
+    margin-top: -4%;
 }
 
 /* Estilos del título responsive (oculto por defecto) */
@@ -132,10 +151,9 @@ input {
 .male,
 .whatsapp {
     display: flex;
-    align-items: first baseline;
     height: 20px;
     width: 25px;
-    margin-top: 2%;
+    margin-top: 5%;
 }
 
 /* Estilos de las secciones de nombre y edad, email y teléfono */
@@ -152,6 +170,7 @@ input {
     width: 15%;
     height: 5%;
     margin-left: 68%;
+    margin-top: 2%;
 }
 
 .boton-añadir {
@@ -162,10 +181,10 @@ input {
 .distribucion_usuarios {
     overflow-y: auto;
     height: 30vw;
-    width: 25vw;
+    width: 28.5vw;
     border-radius: 5px;
     justify-content: center;
-    margin-left: 55%;
+    margin-left: 52%;
     margin-top: -48%;
     background: linear-gradient(180deg, #9A9A9A 0%, #ffffff00 100%);
 }
@@ -176,6 +195,7 @@ input {
     text-align: left;
     margin-left: 45px;
 }
+
 
 /* Ajustes para la versión responsive */
 @media only screen and (max-width: 1000px) {
@@ -213,6 +233,11 @@ input {
     .boton-añadir {
         width: 80%;
     }
+    .icono-tick {
+        margin-left: 78%; /* Ajusta según sea necesario en modo responsive */
+        margin-top: -7%;
+    }
+
 
     .boton-añadir {
         margin-top: 8%;

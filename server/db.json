@@ -1,11 +1,24 @@
 {
   "usuarios": [
     {
-      "id": "4bbb",
-      "nombre": "Miguel",
+      "nombre": "Cesar",
+      "edad": "23",
+      "email": "Cesar@gmail.com",
+      "telefono": "6750356784",
+      "id": "49f6"
+    },
+    {
+      "nombre": "Pedro",
       "edad": "32",
-      "email": "miguel@gmail.com",
-      "telefono": "643234563"
+      "email": "Pedro@gmail.com",
+      "id": "cb65"
+    },
+    {
+      "id": "1d85",
+      "nombre": "Juan",
+      "edad": "54",
+      "email": "Juan@yahoo.es",
+      "telefono": "654323456"
     }
   ]
 }
