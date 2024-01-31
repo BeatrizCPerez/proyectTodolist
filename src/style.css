@@ -12,7 +12,7 @@ body {
     background: rgba(0, 0, 0, 0.80); /* Fondo del contenedor principal */
     height: auto;
     min-height: 40vw;
-    width: 60vw;
+    width: 63vw;
     background-image: url(../public/Vector\ 1.png); /* Imagen de fondo */
     background-size: 70%; /* Tamaño de la imagen de fondo */
     background-position: left;
@@ -35,7 +35,7 @@ body {
     background-size: contain;
     width: 20px; /* Ajusta según sea necesario */
     height: 20px; /* Ajusta según sea necesario */
-    margin-left: 33%; /* Espacio entre el input y el icono */
+    margin-left: 31.5%; /* Espacio entre el input y el icono */
     margin-top: -3.5%;
     opacity: 0; /* Por defecto, el icono no es visible */
 }
@@ -57,7 +57,7 @@ input:valid + .icono-tick {
     height: 55px;
     z-index: 1;
     margin-left: 25%;
-    margin-top: -4%;
+    margin-top: -3%;
 }
 
 /* Estilos del título responsive (oculto por defecto) */
