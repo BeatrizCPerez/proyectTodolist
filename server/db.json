@@ -5,6 +5,13 @@
       "edad": "34",
       "email": "manuel@gmail.com",
       "id": "19e1"
+    },
+    {
+      "id": "8593",
+      "nombre": "beatriz",
+      "edad": "88",
+      "email": "bea@gmail.com",
+      "telefono": "65434567"
     }
   ]
 }

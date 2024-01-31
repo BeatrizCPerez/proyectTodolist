@@ -137,7 +137,7 @@ function enviarFormulario() {
     formData.append('E-mail', email);
     formData.append('Teléfono', telefono);
 
-    const endpoint = 'https://formspree.io/f/xqkrevpl';
+    const endpoint = 'https://formspree.io/f/xdoqenep';
     fetch(endpoint, {
         method: 'POST',
         body: formData,
