@@ -1,5 +1,5 @@
   <h1>PROYECTO TO DO LIST</h1>
- <img src="../proyectTodolist/public/logogithub.png">
+ <img src="./public/logogithub.png">
 
   <p>Bienvenidos a nuestro  formulario  de github en el que podras añadir,editar, borrar personas a tus  proyectos.</p>
   
@@ -31,12 +31,12 @@ El formulario tiene la opción de envio al correo electrónico. El mismo envia a
 Nuetro formulario esta disponible tanto en version desktop. 
 
 
-<img src="../proyectTodolist/public/desktop.png">
+<img src="./public/desktop.png">
 
 
 Como en versión movil.
 
-<img src="../proyectTodolist/public/movil.png">
+<img src="./public/movil.png">
 
 
-<img src="../proyectTodolist/public/logogithub.png">
+<img src="./public/logogithub.png">
