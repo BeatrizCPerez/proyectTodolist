@@ -1,17 +1,11 @@
 {
   "usuarios": [
     {
-      "nombre": "Manuel",
-      "edad": "34",
-      "email": "manuel@gmail.com",
-      "id": "19e1"
-    },
-    {
-      "id": "8593",
-      "nombre": "beatriz",
-      "edad": "88",
-      "email": "bea@gmail.com",
-      "telefono": "65434567"
+      "id": "4bbb",
+      "nombre": "Miguel",
+      "edad": "32",
+      "email": "miguel@gmail.com",
+      "telefono": "643234563"
     }
   ]
 }
