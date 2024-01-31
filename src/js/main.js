@@ -1,12 +1,15 @@
-// Espera a que el DOM esté completamente cargado antes de ejecutar código
 document.addEventListener('DOMContentLoaded', () => {
-    // Agrega un evento al formulario para prevenir su envío por defecto y llamar a la función anadirUsuario
     document.getElementById('miFormulario').addEventListener('submit', (event) => {
         event.preventDefault();
         anadirUsuario();
     });
 
-    // Carga la lista de usuarios al cargar la página
+    // Cambia el tipo de botón de "submit" a "button" en el formulario HTML
+    // y agrega un event listener al botón de añadir
+    document.getElementById('botonAñadir').addEventListener('click', () => {
+        anadirUsuario();
+    });
+
     cargarUsuarios();
 });
 
@@ -44,10 +47,10 @@ async function cargarUsuarios() {
 // Función para añadir un nuevo usuario
 async function anadirUsuario() {
     // Obtiene valores del formulario
-    const nuevoNombre = document.querySelector('.nombre input').value;
-    const nuevaEdad = document.querySelector('.edad input').value;
-    const nuevoEmail = document.querySelector('.email input').value;
-    const nuevoTelefono = document.querySelector('.telefono input').value;
+    const nuevoNombre = document.getElementById('nombre').value;
+    const nuevaEdad = document.getElementById('edad').value;
+    const nuevoEmail = document.getElementById('email').value;
+    const nuevoTelefono = document.getElementById('telefono').value;
 
     // Validaciones de los campos
     if (!/^[a-zA-Z]+$/.test(nuevoNombre)) {
@@ -65,28 +68,38 @@ async function anadirUsuario() {
         return;
     }
 
-    // Envía una solicitud POST a la API para añadir un nuevo usuario
-    const response = await fetch('http://localhost:3000/usuarios', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            nombre: nuevoNombre,
-            edad: nuevaEdad,
-            email: nuevoEmail,
-            telefono: nuevoTelefono,
-        }),
-    });
+    // Objeto con la información del nuevo usuario
+    const nuevoUsuario = {
+        nombre: nuevoNombre,
+        edad: nuevaEdad,
+        email: nuevoEmail,
+        telefono: nuevoTelefono,
+    };
 
-    // Si la solicitud es exitosa, recarga la lista de usuarios y limpia el formulario
-    if (response.ok) {
-        cargarUsuarios();
-        limpiarFormulario();
-    } else {
-        console.error('Error al añadir usuario.');
+    try {
+        // Realiza una solicitud POST a la API para agregar el nuevo usuario
+        const response = await fetch('http://localhost:3000/usuarios', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(nuevoUsuario),
+        });
+
+        // Verifica si la solicitud fue exitosa
+        if (response.ok) {
+            // Recarga la lista de usuarios después de agregar uno nuevo
+            cargarUsuarios();
+            // Limpia los campos del formulario
+            limpiarFormulario();
+        } else {
+            console.error('Error al añadir usuario:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error al añadir usuario:', error.message);
     }
 }
+
 
 // Limpia los campos del formulario
 function limpiarFormulario() {
@@ -96,6 +109,55 @@ function limpiarFormulario() {
     document.querySelector('.telefono input').value = '';
 }
 
+function enviarFormulario() {
+    const nombre = document.getElementById('nombre').value;
+    const edad = document.getElementById('edad').value;
+    const email = document.getElementById('email').value;
+    const telefono = document.getElementById('telefono').value;
+
+    // Validaciones de los campos
+    if (!/^[a-zA-Z]+$/.test(nombre)) {
+        mostrarMensajeError('Por favor, ingrese un nombre válido (solo letras).');
+        return;
+    }
+
+    if (isNaN(edad)) {
+        mostrarMensajeError('Por favor, ingrese una edad válida (número).');
+        return;
+    }
+
+    if (!validarFormatoCorreo(email)) {
+        mostrarMensajeError('Por favor, ingrese un correo electrónico válido.');
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append('Nombre', nombre);
+    formData.append('Edad', edad);
+    formData.append('E-mail', email);
+    formData.append('Teléfono', telefono);
+
+    const endpoint = 'https://formspree.io/f/xqkrevpl';
+    fetch(endpoint, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json',
+        },
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Formulario enviado con éxito');
+            limpiarFormulario();
+        } else {
+            throw new Error('Error al enviar el formulario');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error.message);
+        alert('Hubo un error al enviar el formulario');
+    });
+}
 // Función para editar la información de un usuario
 async function editarUsuario(id) {
     // Solicita al usuario ingresar la nueva información
@@ -193,14 +255,10 @@ function limpiarUsuariosSection() {
     usuariosSection.innerHTML = "";
 }
 
-async function eliminarUsuarioEnDB(id) {
-    // Envía una solicitud DELETE a la API para eliminar el usuario
-    const response = await fetch(`http://localhost:3000/usuarios/${id}`, {
-        method: 'DELETE',
-    });
 
-    // Si la solicitud no es exitosa, imprime un mensaje de error en la consola
-    if (!response.ok) {
-        console.error('Error al eliminar usuario de la base de datos.');
-    }
+
+async function eliminarUsuarioEnDB(id) {
+    // Pregunta al usuario si está seguro de eliminar
+    const confirmacion = confirm('¿Seguro que desea eliminar este usuario?');
+
 }
