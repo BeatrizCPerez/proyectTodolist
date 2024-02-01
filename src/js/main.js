@@ -140,8 +140,9 @@ function enviarFormulario() {
         mostrarMensajeError('Por favor, ingrese un correo electrónico válido.');
         return;
     }
-
-    const formData = new FormData();
+    // Crea un objeto
+    const formData = new FormData(); 
+    // Añade el valor al objeto
     formData.append('Nombre', nombre.value);
     formData.append('Edad', edad.value);
     formData.append('E-mail', email.value);
