@@ -26,7 +26,7 @@ Envío de la Solicitud: fetch para enviar la solicitud a la API. Maneja la respu
 
 Al hacer click en el boton añadir, se nos añadirá el usuario en el espacio derecho o en el responsive en la parte inferior(No hay limite de usuarios.) En la versión desktop al añadir mas de 2 usuarios se nos abre el scroll en el area de almacenamiento de usuario para una experiencia mas cómoda e intuitiva.
 
-El formulario tiene la opción de envio al correo electrónico. El mismo envia al correo de la empresa(el nuestro) la información rellenada en el formulario(no en el area de almacenamiento de usuario). Una vez rellenado el formulario, sin añadir, hacemos click en enviar, nos aparecerá la notificación de formulario enviado correctamente y en el correo recibiremos la información que se ha rellenado en el formulario de la web.
+El formulario tiene la opción de envio al correo electrónico. El mismo envia al correo de la empresa(el nuestro) la información rellenada en el formulario(no en el area de almacenamiento de usuario). Una vez rellenado el formulario, sin añadir, hacemos click en enviar, nos aparecerá la notificación de formulario enviado correctamente y en el correo recibiremos la información que se ha rellenado en el formulario de la web. La acción de envio se realiza a traves de una Api(Formspree).
 
 Al realizar cualquier acción, el mismo se actualiza.
 
